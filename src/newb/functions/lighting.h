@@ -67,7 +67,7 @@ vec3 nlLighting(
     sunLightAttenuation *= 1.0-0.4*env.rainFactor;
 
     // shadow cast by sun light
-    float shadow = step(0.93, uv1.y);
+        float shadow = step(0.93, uv1.y);
     shadow = max(shadow, (1.0 - NL_SHADOW_INTENSITY + (0.6*NL_SHADOW_INTENSITY*nightIntensity))*lit.y);
     shadow *= shade > 0.8 ? 1.0 : 0.8;
     #ifdef NL_CLOUD_SHADOW
@@ -83,11 +83,13 @@ vec3 nlLighting(
     #endif
 
     // direct light from top
-    light = (NL_SUNLIGHT_INTENSITY*shadow*sunLightAttenuation)*sunLightTint(env.dayFactor, env.rainFactor);
+    vec3 directLight = (NL_SUNLIGHT_INTENSITY*sunLightAttenuation)*sunLightTint(env.dayFactor, env.rainFactor);
+    light = mix(vec3_splat(0.0), directLight, shadow);
 
     // sky ambient
     lum = luminance(light);
-    light += (skycol.horizon + skycol.zenith)*(uv1.y/(1.0+lum));
+    float skyAmbientFactor = mix(0.25, 1.0, shadow);
+    light += (skycol.horizon + skycol.zenith)*(uv1.y*skyAmbientFactor/(1.0+lum));
 
   }
 

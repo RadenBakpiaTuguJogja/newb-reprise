@@ -55,7 +55,7 @@ vec4 perm(vec4 x) {
 float noise3D(vec3 p){
   vec3 a = floor(p);
   vec3 d = p - a;
-  //d = d * d * (3.0 - 2.0 * d);
+  d = d * d * (3.0 - 2.0 * d);
 
   vec4 b = a.xxyy + vec4(0.0, 1.0, 0.0, 1.0);
   vec4 k1 = perm(b.xyxy);
@@ -74,7 +74,7 @@ float noise3D(vec3 p){
 
 float fastVoronoi2(vec2 pos, float f) {
   vec4 p = pos.xyxy;
-  p.zw += p.wz*vec2(0.4,0.5);
+  p.zw += p.wz*mix(vec2(0.895,-0.937), vec2(0.937,-0.698), vec2(0.698,-0.837));
   p = fract(p) - 0.5;
   p *= p;
   return 1.0-f*min(p.x+p.y, p.z+p.w);
