@@ -29,7 +29,7 @@
 
 /* Color correction */
 #define NL_TONEMAP_TYPE 3              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
-#define NL_GAMMA 1.33                  // 0.3 low ~ 2.0 high
+#define NL_GAMMA 1.30                  // 0.3 low ~ 2.0 high
 //#define NL_EXPOSURE 1.3              // [toggle] 0.5 dark ~ 3.0 bright
 //#define NL_SATURATION 1.4            // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
@@ -37,7 +37,7 @@
 #define NL_TINT_HIGH vec3(1.4,0.7,0.3) // color tint for light tone
 
 /* Lighting */
-#define NL_SUNLIGHT_INTENSITY   3.3  // 1.0 weak ~ 5.0 bright
+#define NL_SUNLIGHT_INTENSITY   3.1  // 1.0 weak ~ 5.0 bright
 #define NL_TORCHLIGHT_INTENSITY 1.0  // 0.5 weak ~ 3.0 bright
 #define NL_SHADOW_INTENSITY     0.69  // 0.0 no shadow ~ 1.0 strong shadow
 #define NL_MIN_LIGHTING_BOOST   1.0  // 1.0 minimal lighting boost for dark areas ~ 3.0 brighter dark areas
@@ -76,10 +76,10 @@
 #define NL_DAWN_EDGE_COL     vec3(5.1,1.1,0.0)
 #define NL_DAY_ZENITH_COL    vec3(0.45,1.35,3.0)
 #define NL_DAY_HORIZON_COL   vec3(1.6,2.5,2.8)
-#define NL_DAY_EDGE_COL      vec3(2.2,2.6,3.0)
-#define NL_NIGHT_ZENITH_COL  vec3(0.06,0.08,0.29)
-#define NL_NIGHT_EDGE_COL    vec3(0.16,0.17,0.51)
-#define NL_NIGHT_HORIZON_COL vec3(0.26,0.23,0.69)
+#define NL_DAY_EDGE_COL      vec3(2.2,2.8,3.0)
+#define NL_NIGHT_ZENITH_COL  vec3(0.05,0.10,0.33)
+#define NL_NIGHT_EDGE_COL    vec3(0.15,0.19,0.51)
+#define NL_NIGHT_HORIZON_COL vec3(0.25,0.25,0.72)
 #define NL_RAIN_ZENITH_COL   vec3(0.10,0.13,0.18)
 #define NL_RAIN_HORIZON_COL  vec3(0.20,0.26,0.32)
 
