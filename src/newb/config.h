@@ -29,7 +29,7 @@
 
 /* Color correction */
 #define NL_TONEMAP_TYPE 3              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
-#define NL_GAMMA 1.30                  // 0.3 low ~ 2.0 high
+#define NL_GAMMA 1.27                  // 0.3 low ~ 2.0 high
 //#define NL_EXPOSURE 1.3              // [toggle] 0.5 dark ~ 3.0 bright
 //#define NL_SATURATION 1.4            // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
@@ -37,12 +37,12 @@
 #define NL_TINT_HIGH vec3(1.4,0.7,0.3) // color tint for light tone
 
 /* Lighting */
-#define NL_SUNLIGHT_INTENSITY   3.1  // 1.0 weak ~ 5.0 bright
+#define NL_SUNLIGHT_INTENSITY   3.0  // 1.0 weak ~ 5.0 bright
 #define NL_TORCHLIGHT_INTENSITY 1.0  // 0.5 weak ~ 3.0 bright
-#define NL_SHADOW_INTENSITY     0.69  // 0.0 no shadow ~ 1.0 strong shadow
+#define NL_SHADOW_INTENSITY     0.75  // 0.0 no shadow ~ 1.0 strong shadow
 #define NL_MIN_LIGHTING_BOOST   1.0  // 1.0 minimal lighting boost for dark areas ~ 3.0 brighter dark areas
 //#define NL_BLINKING_TORCH  // [toggle] flickering light
-#define NL_CLOUD_SHADOW      // [toggle] cloud shadow (simple clouds only)
+//#define NL_CLOUD_SHADOW      // [toggle] cloud shadow (simple clouds only)
 
 /* Ambient light for nether/end */
 #define NL_NETHER_AMBIENT vec3(3.0,2.32,1.89)
@@ -54,14 +54,14 @@
 #define NL_NIGHT_MOONLIGHT_COL vec3(0.01,0.03,0.1)
 
 /* Torch colors */
-#define NL_OVERWORLD_TORCH_COL  vec3(0.95,0.40,0.09)
-#define NL_UNDERWATER_TORCH_COL vec3(0.95,0.40,0.09)
-#define NL_NETHER_TORCH_COL     vec3(0.95,0.40,0.09)
-#define NL_END_TORCH_COL        vec3(0.95,0.40,0.09)
+#define NL_OVERWORLD_TORCH_COL  vec3(0.92,0.33,0.06)
+#define NL_UNDERWATER_TORCH_COL vec3(0.6,0.4,0.9)
+#define NL_NETHER_TORCH_COL     vec3(0.92,0.33,0.06)
+#define NL_END_TORCH_COL        vec3(0.92,0.33,0.06)
 
 /* Fog */
 #define NL_FOG 0.90                // [toggle] 0.1 subtle ~ 1.0 blend with sky completely
-#define NL_MIST_DENSITY 0.75      // 0.0 no mist ~ 1.0 misty
+#define NL_MIST_DENSITY 0.65      // 0.0 no mist ~ 1.0 misty
 #define NL_RAIN_MIST_OPACITY 0.24 // [toggle] 0.04 very subtle ~ 0.5 thick rain mist blow
 #define NL_CLOUDY_FOG 0.1         // [toggle] 0.0 subtle - 0.8 dense fog clouds
 
@@ -71,15 +71,15 @@
 #define NL_SKY_RAIN_MIX_FACTOR 0.7
 
 /* Sky colors - zenith=top, horizon=bottom */
-#define NL_DAWN_ZENITH_COL   vec3(0.36,0.36,0.60)
-#define NL_DAWN_HORIZON_COL  vec3(5.15,1.2,0.0)
-#define NL_DAWN_EDGE_COL     vec3(5.1,1.1,0.0)
+#define NL_DAWN_ZENITH_COL   vec3(0.20,0.27,0.56)
+#define NL_DAWN_HORIZON_COL  vec3(3.90,1.22,0.52)
+#define NL_DAWN_EDGE_COL     vec3(4.60,1.45,0.60)
 #define NL_DAY_ZENITH_COL    vec3(0.45,1.35,3.0)
 #define NL_DAY_HORIZON_COL   vec3(1.6,2.5,2.8)
 #define NL_DAY_EDGE_COL      vec3(2.2,2.8,3.0)
-#define NL_NIGHT_ZENITH_COL  vec3(0.05,0.10,0.33)
-#define NL_NIGHT_EDGE_COL    vec3(0.15,0.19,0.51)
-#define NL_NIGHT_HORIZON_COL vec3(0.25,0.25,0.72)
+#define NL_NIGHT_ZENITH_COL  vec3(0.04,0.10,0.33)
+#define NL_NIGHT_EDGE_COL    vec3(0.14,0.19,0.51)
+#define NL_NIGHT_HORIZON_COL vec3(0.24,0.25,0.72)
 #define NL_RAIN_ZENITH_COL   vec3(0.10,0.13,0.18)
 #define NL_RAIN_HORIZON_COL  vec3(0.20,0.26,0.32)
 
@@ -100,8 +100,8 @@
 
 /* Waving */
 //#define NL_PLANTS_WAVE 0.05    // [toggle] 0.02 gentle ~ 0.4 violent
-#define NL_LANTERN_WAVE 0.14   // [toggle] 0.05 subtle ~ 0.4 large swing
-#define NL_WAVE_SPEED 1.2      // 0.5 slow wave ~ 5.0 very fast wave
+#define NL_LANTERN_WAVE 0.15   // [toggle] 0.05 subtle ~ 0.4 large swing
+#define NL_WAVE_SPEED 1.3      // 0.5 slow wave ~ 5.0 very fast wave
 //#define NL_EXTRA_PLANTS_WAVE // [toggle] !dont use! wave using texture coords (1.21.0 vanilla 2048x1024)
 #define NL_WAVE_RANGE 10.0     // 6.0 upto 6 blocks ~ 32.0 upto 32 blocks away (slower)
 
@@ -109,17 +109,16 @@
 #define NL_WATER_TRANSPARENCY 0.68 // 0.0 transparent ~ 1.0 normal
 #define NL_WATER_BUMP 0.09        // 0.001 plain ~ 0.2 bumpy water
 #define NL_WATER_WAVE_SPEED  0.8  // 0.2 calm ~ 2.0 turbulent
-#define NL_WATER_TEX_OPACITY 0.0  // 0.0 plain water ~ 1.0 vanilla water texture
+#define NL_WATER_TEX_OPACITY 0.2  // 0.0 plain water ~ 1.0 vanilla water texture
 #define NL_WATER_WAVE             // [toggle] wave effect
 //#define NL_WATER_REFL_MASK      // [toggle] fake water reflection mask
-#define NL_WATER_TINT vec3(0.96, 0.96, 0.96)
-
+#define NL_WATER_TINT vec3(0.52,0.9,0.87)
 /* Underwater */
-#define NL_UNDERWATER_BRIGHTNESS 1.5         // 0.0 dark ~ 3.0 bright
+#define NL_UNDERWATER_BRIGHTNESS 1.7         // 0.0 dark ~ 3.0 bright
 #define NL_CAUSTIC_INTENSITY 2.4             // 0.5 weak ~ 5.0 bright
-#define NL_UNDERWATER_WAVE 0.02               // [toggle] 0.02 subtle ~ 0.6 trippy
-#define NL_UNDERWATER_STREAKS 2.0            // [toggle] 0.8 subtle - 2.0 bright streaks from top
-#define NL_UNDERWATER_TINT vec3(0.99, 0.99, 0.99) // fog tint color when underwater
+#define NL_UNDERWATER_WAVE 0.03               // [toggle] 0.02 subtle ~ 0.6 trippy
+#define NL_UNDERWATER_STREAKS 1.8            // [toggle] 0.8 subtle - 2.0 bright streaks from top
+#define NL_UNDERWATER_TINT vec3(0.91,1.0,0.95) // fog tint color when underwater
 
 /* Cloud type */
 #define NL_CLOUD_TYPE 1 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
@@ -141,7 +140,7 @@
 #define NL_CLOUD2_THICKNESS 4.6            // 0.5 slim ~ 5.0 fat
 #define NL_CLOUD2_RAIN_THICKNESS 5.2       // 0.5 slim ~ 5.0 fat
 #define NL_CLOUD2_STEPS 5                  // 3 low quality ~ 16 high quality
-#define NL_CLOUD2_SCALE vec2(0.025, 0.025) // 0.003 large ~ 0.3 tiny
+#define NL_CLOUD2_SCALE vec2(0.030, 0.030) // 0.003 large ~ 0.3 tiny
 #define NL_CLOUD2_SHAPE vec2(0.6, 0.8)     // 0.0 round ~ 1.0 box vec2(horizontal shape, vertical shape)
 #define NL_CLOUD2_DENSITY 200.0             // 0.35 blurry ~ 100.0 sharp
 #define NL_CLOUD2_VELOCITY 0.55             // 0.0 static ~ 4.0 very fast
@@ -150,7 +149,7 @@
 #define NL_CLOUD2_LAYER2_THICKNESS 4.8          // 0.7 slim ~ 5.0 fat
 #define NL_CLOUD2_LAYER2_RAIN_THICKNESS 5.4     // 0.7 slim ~ 5.0 fat
 #define NL_CLOUD2_LAYER2_STEPS 5                // 3 low quality ~ 16 high quality
-#define NL_CLOUD2_LAYER2_SCALE vec2(0.025, 0.025) // 0.003 large ~ 0.3 tiny
+#define NL_CLOUD2_LAYER2_SCALE vec2(0.030, 0.030) // 0.003 large ~ 0.3 tiny
 #define NL_CLOUD2_LAYER2_SHAPE vec2(0.6, 0.8)   // 0.0 round ~ 1.0 box vec2 horizontal shape, vertical shape)
 #define NL_CLOUD2_LAYER2_DENSITY 200.0           // 0.35 blurry ~ 100.0 sharp
 #define NL_CLOUD2_LAYER2_VELOCITY 0.6           // 0.0 static ~ 4.0 very fast

@@ -9,7 +9,7 @@ description = '''
 ''' # %w = patch warning, %v = version
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
-uuid = "b96d9a86-bf35-4147-b914-e835a0a8d534" # Use https://www.uuidgenerator.net/version4
+uuid = "1dc8a22a-0029-4294-a0b4-a573550a8f05" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
 
 [info] 
