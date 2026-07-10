@@ -107,8 +107,8 @@
 
 /* Water */
 #define NL_WATER_TRANSPARENCY 0.68 // 0.0 transparent ~ 1.0 normal
-#define NL_WATER_BUMP 0.09        // 0.001 plain ~ 0.2 bumpy water
-#define NL_WATER_WAVE_SPEED  0.8  // 0.2 calm ~ 2.0 turbulent
+#define NL_WATER_BUMP 0.001        // 0.001 plain ~ 0.2 bumpy water
+#define NL_WATER_WAVE_SPEED  0.0  // 0.2 calm ~ 2.0 turbulent
 #define NL_WATER_TEX_OPACITY 0.2  // 0.0 plain water ~ 1.0 vanilla water texture
 #define NL_WATER_WAVE             // [toggle] wave effect
 //#define NL_WATER_REFL_MASK      // [toggle] fake water reflection mask
@@ -155,7 +155,7 @@
 #define NL_CLOUD2_LAYER2_VELOCITY 0.6           // 0.0 static ~ 4.0 very fast
 
 /* Realistic cloud settings */
-#define NL_CLOUD3_SCALE vec2(0.02, 0.02) // 0.003 large ~ 1.0 tiny
+#define NL_CLOUD3_SCALE vec2(0.02, 0.02) // 0.007 large ~ 0.5 tiny
 #define NL_CLOUD3_SPEED 0.005            // 0.0 static ~ 4.0 fast moving
 #define NL_CLOUD3_SHADOW 0.5             // 0.1 subtle ~ 1.0 dark
 #define NL_CLOUD3_SHADOW_OFFSET 0.4      // 0.05 minimal ~ 1.0 large
@@ -198,7 +198,7 @@
 //#define NL_GODRAY 0.3 // [toggle] 0.1 subtle ~ 0.8 strong
 
 /* Sky reflection */
-//#define NL_GROUND_REFL 0.4       // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky
+#define NL_GROUND_REFL 1.0       // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky
 #define NL_GROUND_RAIN_WETNESS 1.0 // 0.0 no wetness ~ 1.0 fully wet blocks when raining
 #define NL_GROUND_RAIN_PUDDLES 0.9 // 0.0 no puddles ~ 1.0 puddles
 
@@ -210,6 +210,8 @@
 //#define NL_WEATHER_SPECK 0.0         // [toggle] 0.0 vanilla texture ~ 1.0 soft speck
 #define NL_WEATHER_RAIN_SLANT 1.0    // 1.0 minimal ~ 8.0 violent
 #define NL_WEATHER_PARTICLE_SIZE 0.9 // 0.5 tiny ~ 4.0 large
+#define NL_WEATHER_PARTICLE_OPACITY 0.5 // 0.0 invisible ~ 1.0 opaque
+
 
 /* Lava effects */
 //#define NL_LAVA_NOISE            // [toggle] darken lava in certain regions
