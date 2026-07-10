@@ -115,15 +115,6 @@ float cloudsNoiseVr(vec2 pos, float t) {
   return n*n;
 }
 
-float cloudsNoiseVr2(vec2 pos, float t) {
-  float n = fastVoronoi2(2.5*pos + t, 1.0);
-  n *= fastVoronoi2(4.0*pos + t, 1.0);
-  n *= fastVoronoi2(12.0*pos + t, 0.3);
-  n *= fastVoronoi2(27.0*pos + t, 0.1);
-  n *= fastVoronoi2(81.0*pos + t, 0.03);
-  return n*n;
-}
-
 vec4 renderClouds(vec2 p, float t, float rain, vec3 horizonCol, vec3 zenithCol, const vec2 scale, const float velocity, const float shadow) {
   p *= scale;
   t *= velocity;
