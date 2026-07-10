@@ -108,10 +108,19 @@ vec4 renderCloudsRounded(
 // realistic clouds
 float cloudsNoiseVr(vec2 pos, float t) {
   float n = fastVoronoi2(2.5*pos + t, 0.8);
-  n *= fastVoronoi2(3.0*p + t, 0.7);
-  n *= fastVoronoi2(9.0*p + t, 0.4);
-  n *= fastVoronoi2(16.0*p + t, 0.2);
-  n *= fastVoronoi2(65.0*p + t, 0.02); // more quality
+  n *= fastVoronoi2(3.0*pos + t, 0.7);
+  n *= fastVoronoi2(9.0*pos + t, 0.4);
+  n *= fastVoronoi2(16.0*pos + t, 0.2);
+  n *= fastVoronoi2(65.0*pos + t, 0.02); // more quality
+  return n*n;
+}
+
+float cloudsNoiseVr2(vec2 pos, float t) {
+  float n = fastVoronoi2(2.5*pos + t, 1.0);
+  n *= fastVoronoi2(4.0*pos + t, 1.0);
+  n *= fastVoronoi2(12.0*pos + t, 0.3);
+  n *= fastVoronoi2(27.0*pos + t, 0.1);
+  n *= fastVoronoi2(81.0*pos + t, 0.03);
   return n*n;
 }
 
