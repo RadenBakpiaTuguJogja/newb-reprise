@@ -39,6 +39,7 @@ vec3 nlGlow(sampler2D tex, vec2 uv, float shimmer) {
     vec2 offset = 1.0 / texSize;
 
     // detect edge pixel and direction (assuming 64x32 texture atlas)
+    // 0.01 extra offset to fix precision issue on some devices
     float boundSize = texSize.x/64.0;
     vec2 st = boundSize*fract(64.0*uv*(texSize/texSize.x)) - 0.5*boundSize;
     st = sign(st)*step(vec2_splat(0.5*boundSize-1.01), abs(st));
