@@ -2,6 +2,7 @@
 #define NOISE_H
 
 #include "utils.h"
+SAMPLER2D_AUTOREG(s_NoiseTexture);
 
 // functions under [1] are from https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
 
