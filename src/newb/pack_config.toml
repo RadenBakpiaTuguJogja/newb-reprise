@@ -1,5 +1,5 @@
-name = "§o§l§aNewb Reprise"
-version = [1, 1, 0]
+name = "§o§l§aNewb Reprise Beta"
+version = [1, 1, 1]
 min_supported_mc_version = [1, 26, 30]
 description = '''
 §c%w
@@ -9,7 +9,7 @@ description = '''
 ''' # %w = patch warning, %v = version
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
-uuid = "1dc8a22a-0029-4294-a0b4-a573550a8f05" # Use https://www.uuidgenerator.net/version4
+uuid = "cf7206b6-f632-46ce-8e0c-bd73cb5e5ff7" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
 
 [info] 
