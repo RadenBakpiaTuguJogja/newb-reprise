@@ -126,32 +126,66 @@ vec3 renderOverworldSky(nl_skycolor skyCol, nl_environment env, vec3 viewDir, bo
   return sky;
 }
 
-vec3 renderEndSky(vec3 horizonCol, vec3 zenithCol, vec3 viewDir, float t) {
-  t *= 0.1;
-  float a = atan2(viewDir.x, viewDir.z);
+// ===== Spiral Galaxy Shader Core for End (without stars) =====
+vec3 nlRenderGalaxyEnd(vec3 vdir, float t) {
+    
+  // Defines galaxy colors
+ #define GALAXYCOLOR_EDGE vec3(0.38,0.022,0.69)
+ #define GALAXYCOLOR_CORE vec3(0.15, 0.05, 0.95)*1.5
 
-  float n1 = 0.5 + 0.5*sin(3.0*a + t + 10.0*viewDir.x*viewDir.y);
-  float n2 = 0.5 + 0.5*sin(5.0*a + 0.5*t + 5.0*n1 + 0.1*sin(40.0*a -4.0*t));
+  // Modify time for noise animation, but not for position
+  t *= 0.025;
 
-  float waves = 0.7*n2*n1 + 0.3*n1;
+  // Keep the galaxy fixed at the top of the sky:
+  // do not rotate its direction over time.
+  
+  // Compute angle and radius in polar coordinates
+  float angle = atan2(vdir.x, vdir.y);
+  float radius = length(vdir.xy);
+  
+  // Keep galaxy toward the top: amplify vertical alignment and reduce horizontal drift
+  vdir.x *= 0.2;
+  vdir.y = max(vdir.y, 0.25);
+  
+  // Spiral arms
+  float spiralTightness = 5.5;
+  float arms = 5.0;
+  float armAngle = angle - radius * spiralTightness - t;
+  float armMask = cos(arms * armAngle);
+  float softness = mix(0.0, 1.0, exp(-radius * 10.0)) - 0.5*sin(t*10.0)*cos(t*10.);
+  float armShape = -smoothstep(softness, 3.5, armMask) + sin(t*10.0)*cos(t*10.0);
 
-  float grad = 0.5 + 0.5*viewDir.y;
-  float streaks = waves*(1.0 - grad*grad*grad);
-  streaks += (1.0-streaks)*smoothstep(1.0-waves, -1.0, viewDir.y);
+  // Core brightness
+  float core = exp(1.0-radius * 3.0);
 
-  float f = 0.3*streaks + 0.7*smoothstep(1.0, -0.5, viewDir.y);
-  float h = streaks*streaks;
-  float g = h*h;
-  g *= g;
+  // Randomized dust/noise
+  float noise = noise3D(vdir * 15.0 + t * 0.4);
 
-vec3 sky = mix(zenithCol, horizonCol, f*f);
-  sky += (0.1*streaks + 2.0*g*g*g + h*h*h)*vec3(10.0, 0.12, 1.4);
-  // something something end streak color
-  vec3 streakColor = vec3(0.1, 0.06, 20.0);
-  sky += 0.25*streaks*streakColor;
+  // Brightness shape
+  float brightness = armShape * exp(-radius * 3.0) + core;
+  brightness *= 0.8 + 0.2 * noise;
 
-  return sky;
+  // Color gradient from core to edge
+  vec3 coreColor = GALAXYCOLOR_CORE;
+  vec3 edgeColor = GALAXYCOLOR_EDGE;
+  vec3 color = mix(coreColor, edgeColor, radius);
+
+  // Final composed color (without stars)
+  vec3 finalColor = color * brightness;
+
+  return finalColor;
 }
+// Render End sky with the new galaxy
+vec3 renderEndSky(vec3 horizonCol, vec3 zenithCol, vec3 v, float t) {
+    vec3 sky = vec3(0.0, 0.0, 0.0);
+    
+    // Add the spiral galaxy to the End sky
+    vec3 galaxy = nlRenderGalaxyEnd(v, t);
+    sky += galaxy;
+    
+    return sky;
+}
+
 
 vec3 nlRenderSky(nl_skycolor skycol, nl_environment env, vec3 viewDir, float t, bool isSkyPlane) {
   vec3 sky;
@@ -214,7 +248,7 @@ vec3 nlRenderShootingStar(vec3 viewDir, vec3 FOG_COLOR, float t) {
   return s*vec3(0.8, 0.9, 1.0);
 }
 
-// Galaxy stars - needs further optimization
+// custom galaxy
 vec3 nlRenderGalaxy(vec3 vdir, vec3 fogColor, nl_environment env, float t) {
   if (env.underwater) {
     return vec3_splat(0.0);
@@ -237,13 +271,12 @@ vec3 nlRenderGalaxy(vec3 vdir, vec3 fogColor, nl_environment env, float t) {
   n3 = smoothstep(0.04, 0.3, n3 + 0.02*n2);
   float gd = vdir.x + 0.1*vdir.y + 0.1*sin(10.0*vdir.z + 0.2*t);
   float st = n1 * n2 * n3 * n3 * (1.0 + 70.0 * gd * gd);
-  st = (1.0 - st) / (1.0 + 1.0 * st);
-  vec3 stars = 2.0*vec3(0.78, 0.60, 1.0) * st; // <Stars color over here
+  st = (1.0 - st) / (1.0 + 100.0 * st);
+  vec3 stars = vec3(0.2, 0.1, 1.0) * st; // <Stars color over here
 
-  stars *= mix(1.0, NL_GALAXY_DAY_VISIBILITY, env.dayFactor);
+  stars *= mix(0.0, NL_GALAXY_DAY_VISIBILITY, env.dayFactor);
 
   return stars*(1.0-env.rainFactor);
 }
-
 
 #endif

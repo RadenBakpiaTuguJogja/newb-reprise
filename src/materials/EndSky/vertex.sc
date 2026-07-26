@@ -27,7 +27,7 @@ void main() {
   float cosA = cos(t);
   pos.xz = mul(mtxFromRows(vec2(cosA,-sinA),vec2(sinA,cosA)), pos.xz);
 
-  vec3 wPos = pos;
+  vec3 wPos = pos;  
   wPos.xz = -wPos.xz;
 
   v_texcoord0 = 2.0*a_texcoord0;
