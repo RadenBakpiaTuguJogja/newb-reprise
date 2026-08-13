@@ -9,7 +9,7 @@ description = '''
 ''' # %w = patch warning, %v = version
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
-uuid = "cf7206b6-f632-46ce-8e0c-bd73cb5e5ff7" # Use https://www.uuidgenerator.net/version4
+uuid = "e7b26cda-4d35-4892-949c-a080d952f058" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
 
 [info] 
@@ -91,6 +91,6 @@ description = '''
 define = "LITE"
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
 description = '''
-§aLite (soft clouds)
+§aLite (box clouds)
 - §oMany effects disabled. A bit lighter!
 '''

@@ -61,14 +61,14 @@
 
 /* Fog */
 #define NL_FOG 1.0                // [toggle] 0.1 subtle ~ 1.0 blend with sky completely
-#define NL_MIST_DENSITY 0.48      // 0.0 no mist ~ 1.0 misty
+#define NL_MIST_DENSITY 0.33      // 0.0 no mist ~ 1.0 misty
 #define NL_RAIN_MIST_OPACITY 0.18 // [toggle] 0.04 very subtle ~ 0.5 thick rain mist blow
 //#define NL_CLOUDY_FOG 0.05         // [toggle] 0.0 subtle - 0.8 dense fog clouds
 
 /* Sky */
 #define NL_SKY_VOID_FACTOR     1.0
 #define NL_SKY_VOID_DARKNESS   0.5
-#define NL_SKY_RAIN_MIX_FACTOR 0.0
+#define NL_SKY_RAIN_MIX_FACTOR 0.8
 
 /* Sky colors - zenith=top, horizon=bottom */
 #define NL_DAWN_ZENITH_COL   vec3(0.35,0.27,0.58)
@@ -80,8 +80,8 @@
 #define NL_NIGHT_ZENITH_COL  vec3(0.04,0.10,0.33)
 #define NL_NIGHT_EDGE_COL    vec3(0.14,0.19,0.51)
 #define NL_NIGHT_HORIZON_COL vec3(0.24,0.25,0.72)
-#define NL_RAIN_ZENITH_COL   vec3(0.10,0.13,0.18)
-#define NL_RAIN_HORIZON_COL  vec3(0.20,0.26,0.32)
+#define NL_RAIN_ZENITH_COL   vec3(0.18,0.20,0.23)
+#define NL_RAIN_HORIZON_COL  vec3(0.34,0.37,0.41)
 
 #define NL_END_ZENITH_COL    vec3(0.10,0.0005,0.38)
 #define NL_END_HORIZON_COL   vec3(0.75,0.002,1.10)
@@ -112,7 +112,7 @@
 #define NL_WATER_TEX_OPACITY 0.65  // 0.0 plain water ~ 1.0 vanilla water texture
 #define NL_WATER_WAVE             // [toggle] wave effect
 //#define NL_WATER_REFL_MASK      // [toggle] fake water reflection mask
-#define NL_WATER_TINT vec3(0.52,0.96,0.48)
+#define NL_WATER_TINT vec3(0.52,0.99,0.60)
 /* Underwater */
 #define NL_UNDERWATER_BRIGHTNESS 1.8         // 0.0 dark ~ 3.0 bright
 #define NL_CAUSTIC_INTENSITY 1.0             // 0.5 weak ~ 5.0 bright
@@ -121,7 +121,7 @@
 #define NL_UNDERWATER_TINT vec3(0.99,1.0,0.9) // fog tint color when underwater
 
 /* Cloud type */
-#define NL_CLOUD_TYPE 1 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
+#define NL_CLOUD_TYPE 0 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
 
 /* Vanilla cloud settings - make sure to remove clouds.png when using this */
 #define NL_CLOUD0_THICKNESS 4.7      // 0.5 slim ~ 8.0 fat
@@ -208,8 +208,8 @@
 #define NL_GROUND_RAIN_PUDDLES 0.9 // 0.0 no puddles ~ 1.0 puddles
 
 /* Entity (Actor, ItemInHand) */
-#define NL_ENTITY_BRIGHTNESS     0.63 // 0.1 dark ~ 1.6 bright
-#define NL_ENTITY_EDGE_HIGHLIGHT 0.43 // [toggle] 0.0 no highlight ~ 1.6 bright highlight
+#define NL_ENTITY_BRIGHTNESS     0.60 // 0.1 dark ~ 1.6 bright
+#define NL_ENTITY_EDGE_HIGHLIGHT 0.41 // [toggle] 0.0 no highlight ~ 1.6 bright highlight
 
 /* Weather particles */
 //#define NL_WEATHER_SPECK 0.0         // [toggle] 0.0 vanilla texture ~ 1.0 soft speck
@@ -246,6 +246,7 @@
   #undef NL_RAIN_MIST_OPACITY
   #undef NL_CLOUDY_FOG
   #undef NL_ENTITY_EDGE_HIGHLIGHT
+   #define NL_CLOUD0_MULTILAYER
 #endif
 
 
