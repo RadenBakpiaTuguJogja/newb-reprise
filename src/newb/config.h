@@ -68,7 +68,7 @@
 /* Sky */
 #define NL_SKY_VOID_FACTOR     1.0
 #define NL_SKY_VOID_DARKNESS   0.5
-#define NL_SKY_RAIN_MIX_FACTOR 0.8
+#define NL_SKY_RAIN_MIX_FACTOR 1.0
 
 /* Sky colors - zenith=top, horizon=bottom */
 #define NL_DAWN_ZENITH_COL   vec3(0.35,0.27,0.58)
@@ -190,8 +190,8 @@
 //#define NL_CHUNK_LOAD_ANIM 100.0 // [toggle] -600.0 fall from top ~ 600.0 rise from bottom
 
 /* Sun/Moon */
-#define NL_SUN_SIZE  1.0           // 0.3 tiny ~ 4.0 massive
-#define NL_MOON_SIZE 1.0           // 0.3 tiny ~ 4.0 massive
+#define NL_SUN_SIZE  1.3           // 0.3 tiny ~ 4.0 massive
+#define NL_MOON_SIZE 1.2           // 0.3 tiny ~ 4.0 massive
 #define NL_SUN_PATH_YAW    15.0 //
 #define NL_MOON_PATH_YAW   17.0 //
 #define NL_SUN_PATH_TILT   31.0 //
