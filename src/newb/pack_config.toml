@@ -10,7 +10,7 @@ description = '''
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
 uuid = "e7b26cda-4d35-4892-949c-a080d952f058" # Use https://www.uuidgenerator.net/version4
-materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
+materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "ActorMultiTexture", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
 
 [info] 
 copyright = '''
