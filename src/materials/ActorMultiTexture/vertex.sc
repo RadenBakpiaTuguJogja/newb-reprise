@@ -16,6 +16,8 @@ uniform vec4 OverlayColor;
 uniform mat4 Bones[8];
 uniform vec4 UVAnimation;
 uniform vec4 TimeOfDay;
+uniform vec4 Day;
+uniform vec4 FogAndDistanceControl;
 uniform vec4 ViewPositionAndTime;
 uniform vec4 CameraPosition;
 uniform vec4 RenderDistance;
@@ -39,7 +41,7 @@ void main() {
   vec4 position = jitterVertexPosition(worldPosition);
 
   #if !(defined(DEPTH_ONLY_OPAQUE) || defined(DEPTH_ONLY) || defined(INSTANCING))
-    nl_environment env = nlDetectEnvironment(TimeOfDay.x, FogColor.rgb, FogControl.xyz);
+    nl_environment env = nlDetectEnvironment(TimeOfDay.x, Day.x, FogColor.rgb, FogAndDistanceControl.xyz);
     nl_skycolor skycol = nlSkyColors(env);
 
     float relativeDist = position.z/FogControl.z;
@@ -48,7 +50,7 @@ void main() {
     viewDir.y = -viewDir.y;
 
     vec4 fogColor;
-    fogColor.rgb = nlRenderSky(skycol, env, viewDir, ViewPositionAndTime.w, false, false);
+    fogColor.rgb = nlRenderSky(skycol, env, viewDir, ViewPositionAndTime.w, false);
     fogColor.a = nlRenderFogFade(relativeDist, FogColor.rgb, FogControl.xy);
 
     float netherBiome = 0.0;
@@ -59,7 +61,7 @@ void main() {
       //fogColor.rgb = colorCorrectionInv(FogColor.rgb);
     }
 
-    vec3 light = nlEntityLighting(skycol, env, a_position, a_normal, worldPosition.xyz, World, TileLightColor, OverlayColor, skycol.horizonEdge, ViewPositionAndTime.w, TimeOfDay.x, RenderDistance.x, CameraPosition.xyz, netherBiome);
+    vec3 light = nlEntityLighting(skycol, env, a_position, a_normal, worldPosition.xyz, World, TileLightColor, OverlayColor, skycol.horizonEdge, ViewPositionAndTime.w, TimeOfDay.x, RenderDistance.x, CameraPosition.xyz);
 
     v_texcoord0 = texcoord0;
     v_color0 = a_color0;
