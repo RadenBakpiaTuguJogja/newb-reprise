@@ -22,6 +22,7 @@ uniform vec4 ViewPositionAndTime;
 uniform vec4 CameraPosition;
 uniform vec4 RenderDistance;
 
+
 void main() {
   mat4 World = u_model[0];
 
@@ -53,12 +54,9 @@ void main() {
     fogColor.rgb = nlRenderSky(skycol, env, viewDir, ViewPositionAndTime.w, false);
     fogColor.a = nlRenderFogFade(relativeDist, FogColor.rgb, FogControl.xy);
 
-    float netherBiome = 0.0;
     if (env.nether) {
       // blend fog with void color
-      netherBiome = smoothstep(0.0, 0.8, FogColor.b);
-      fogColor.rgb = mix(vec3(1.0, 0.169, 0.0), vec3(0.0, 1.0, 0.949), smoothstep(0.0, 0.8, FogColor.b))*1.5;
-      //fogColor.rgb = colorCorrectionInv(FogColor.rgb);
+      fogColor.rgb = colorCorrectionInv(FogColor.rgb);
     }
 
     vec3 light = nlEntityLighting(skycol, env, a_position, a_normal, worldPosition.xyz, World, TileLightColor, OverlayColor, skycol.horizonEdge, ViewPositionAndTime.w, TimeOfDay.x, RenderDistance.x, CameraPosition.xyz);
