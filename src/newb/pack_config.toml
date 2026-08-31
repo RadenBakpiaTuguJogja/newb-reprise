@@ -1,6 +1,6 @@
 name = "§o§l§aNewb Reprise"
 version = [2, 2, 2]
-min_supported_mc_version = [1, 26, 30]
+min_supported_mc_version = [1, 26, 40]
 description = '''
 §c%w
 §7- §fAdding clarity to MCBE graphics.
@@ -10,7 +10,7 @@ description = '''
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
 uuid = "e7b26cda-4d35-4892-949c-a080d952f058" # Use https://www.uuidgenerator.net/version4
-materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "ActorMultiTexture", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
+materials = ["Actor", "ActorGlint", "ActorMultiTexture", "Clouds", "EndSky", "ItemInHandColor", "ItemInHandColorGlint", "ItemInHandTextured", "RenderChunk","Sky", "Stars", "SunMoon", "Weather"]
 
 [info] 
 copyright = '''

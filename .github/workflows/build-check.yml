@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  merged:
+  multiplatform:
     runs-on: windows-2022
     steps:
     - uses: actions/checkout@v7
@@ -22,8 +22,8 @@ jobs:
     - run: pip install -r requirements.txt
     - run: |
         .\build.bat setup
-        .\build.bat pack -p merged -v 99 --no-zip
+        .\build.bat pack -p multiplatform -v 99 --no-zip
     - uses: actions/upload-artifact@v4
       with:
-        name: newb-x-merged-pr
-        path: ./build/pack-merged-pr
+        name: newb-x-multiplatform-pr
+        path: ./build/pack-multiplatform-pr
