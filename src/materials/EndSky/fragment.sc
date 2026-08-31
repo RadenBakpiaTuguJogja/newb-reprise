@@ -19,7 +19,7 @@ uniform vec4 DimensionID;
 void main() {
   #ifndef INSTANCING
      vec3 viewDir = normalize(v_posTime.xyz);
-     nl_environment env = nlDetectEnvironment(TimeOfDay.x, Day.x, FogColor.rgb, FogAndDistanceControl.xyz);
+     nl_environment env = nlDetectEnvironment(TimeOfDay.x, FogColor.rgb, FogControl.xyz);
     vec4 diffuse = texture2D(s_SkyTexture, v_texcoord0);
 
     vec3 color = renderEndSky(getEndHorizonCol(), getEndZenithCol(), normalize(v_posTime.xyz), v_posTime.w);

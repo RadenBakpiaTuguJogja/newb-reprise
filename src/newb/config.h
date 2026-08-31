@@ -29,17 +29,17 @@
 
 /* Color correction */
 #define NL_TONEMAP_TYPE 3              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
-#define NL_GAMMA 1.27                  // 0.3 low ~ 2.0 high
+#define NL_GAMMA 1.30                  // 0.3 low ~ 2.0 high
 //#define NL_EXPOSURE 1.3              // [toggle] 0.5 dark ~ 3.0 bright
-//#define NL_SATURATION 0.92            // [toggle] 0.0 grayscale ~ 4.0 super saturated
+#define NL_SATURATION 1.0            // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
 #define NL_TINT_LOW  vec3(0.3,0.5,1.4) // color tint for dark tone
 #define NL_TINT_HIGH vec3(1.4,0.7,0.3) // color tint for light tone
 
 /* Lighting */
-#define NL_SUNLIGHT_INTENSITY   3.0  // 1.0 weak ~ 5.0 bright
-#define NL_TORCHLIGHT_INTENSITY 1.2  // 0.5 weak ~ 3.0 bright
-#define NL_SHADOW_INTENSITY     0.83  // 0.0 no shadow ~ 1.0 strong shadow
+#define NL_SUNLIGHT_INTENSITY   3.2  // 1.0 weak ~ 5.0 bright
+#define NL_TORCHLIGHT_INTENSITY 1.1  // 0.5 weak ~ 3.0 bright
+#define NL_SHADOW_INTENSITY     0.84  // 0.0 no shadow ~ 1.0 strong shadow
 #define NL_MIN_LIGHTING_BOOST   1.0  // 1.0 minimal lighting boost for dark areas ~ 3.0 brighter dark areas
 //#define NL_BLINKING_TORCH  // [toggle] flickering light
 //#define NL_CLOUD_SHADOW      // [toggle] cloud shadow (simple clouds only)
@@ -49,14 +49,14 @@
 #define NL_END_AMBIENT    vec3(1.38,1.15,2.4)
 
 /* Sun/moon light color */
-#define NL_DAWN_SUNLIGHT_COL   vec3(1.07,0.90,0.75)
-#define NL_NOON_SUNLIGHT_COL   vec3(1.05,0.90,0.80)
-#define NL_NIGHT_MOONLIGHT_COL vec3(0.01,0.03,0.1)
+#define NL_DAWN_SUNLIGHT_COL   vec3(1.07,0.95,0.75)
+#define NL_NOON_SUNLIGHT_COL   vec3(1.20,0.96,0.91)
+#define NL_NIGHT_MOONLIGHT_COL vec3(0.015,0.03,0.15)
 
 /* Torch colors */
 #define NL_OVERWORLD_TORCH_COL  vec3(1.0,0.52,0.18)
 #define NL_UNDERWATER_TORCH_COL vec3(0.6,0.4,0.9)
-#define NL_NETHER_TORCH_COL  vec3(1.0,0.52,0.18)
+#define NL_NETHER_TORCH_COL     vec3(1.0,0.52,0.18)
 #define NL_END_TORCH_COL        vec3(1.0,0.48,0.18)
 
 /* Fog */
@@ -72,16 +72,16 @@
 
 /* Sky colors - zenith=top, horizon=bottom */
 #define NL_DAWN_ZENITH_COL   vec3(0.35,0.27,0.58)
-#define NL_DAWN_HORIZON_COL  vec3(4.35,1.25,0.27)
-#define NL_DAWN_EDGE_COL     vec3(4.80,1.45,0.45)
-#define NL_DAY_ZENITH_COL    vec3(0.30,0.90,2.10)
-#define NL_DAY_HORIZON_COL   vec3(1.10,1.88,2.05)
-#define NL_DAY_EDGE_COL      vec3(1.45,2.08,2.20)
-#define NL_NIGHT_ZENITH_COL  vec3(0.04,0.10,0.33)
-#define NL_NIGHT_EDGE_COL    vec3(0.14,0.19,0.51)
-#define NL_NIGHT_HORIZON_COL vec3(0.24,0.25,0.72)
-#define NL_RAIN_ZENITH_COL   vec3(0.18,0.20,0.27)
-#define NL_RAIN_HORIZON_COL  vec3(0.34,0.37,0.44)
+#define NL_DAWN_HORIZON_COL  vec3(5.35,1.15,0.27)
+#define NL_DAWN_EDGE_COL     vec3(5.90,1.25,0.35)
+#define NL_DAY_ZENITH_COL    vec3(0.34,1.05,2.30)
+#define NL_DAY_HORIZON_COL   vec3(1.35,2.05,2.25)
+#define NL_DAY_EDGE_COL      vec3(1.75,2.30,2.40)
+#define NL_NIGHT_ZENITH_COL  vec3(0.035,0.055,0.20)
+#define NL_NIGHT_EDGE_COL    vec3(0.10,0.12,0.38)
+#define NL_NIGHT_HORIZON_COL vec3(0.22,0.20,0.58)
+#define NL_RAIN_ZENITH_COL   vec3(0.18,0.20,0.67)
+#define NL_RAIN_HORIZON_COL  vec3(0.34,0.32,0.74)
 
 #define NL_END_ZENITH_COL    vec3(0.10,0.0005,0.38)
 #define NL_END_HORIZON_COL   vec3(0.75,0.002,1.10)
@@ -126,7 +126,7 @@
 /* Vanilla cloud settings - make sure to remove clouds.png when using this */
 #define NL_CLOUD0_THICKNESS 4.7      // 0.5 slim ~ 8.0 fat
 #define NL_CLOUD0_RAIN_THICKNESS 5.2 // 0.5 slim ~ 8.0 fat
-#define NL_CLOUD0_OPACITY 0.78        // 0.0 invisible ~ 1.0 opaque
+#define NL_CLOUD0_OPACITY 1.0        // 0.0 invisible ~ 1.0 opaque
 //#define NL_CLOUD0_MULTILAYER         // [toggle] extra cloud layer
 
 /* Soft cloud settings */
