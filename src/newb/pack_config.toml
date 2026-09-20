@@ -1,6 +1,6 @@
 name = "§o§l§aNewb Reprise"
-version = [3, 1, 3]
-min_supported_mc_version = [1, 26, 40]
+version = [3, 3, 3]
+min_supported_mc_version = [1, 26, 50]
 description = '''
 §c%w
 §7- §fAdding clarity to MCBE graphics.
