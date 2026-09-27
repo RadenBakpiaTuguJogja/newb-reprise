@@ -94,8 +94,10 @@ vec4 renderCloudsRounded(
     d.y = 1.0 - d.y;
   }
 
-  vec4 col = vec4(zenithCol + horizonCol, d.x);
-  col.rgb += dot(col.rgb, vec3(0.4,0.5,0.3))*d.y*d.y;
+  vec3 cloudColor = mix(horizonCol, zenithCol, clamp(d.y, 0.0, 1.0));
+  vec4 col = vec4(cloudColor, d.x);
+  col.rgb += 0.10*zenithCol*(1.0 - 0.5*rain)*d.y*d.y;
+  col.rgb *= NL_CLOUD2_BRIGHTNESS;
   col.rgb *= 1.0 - 0.5*rain;
   return col;
 }

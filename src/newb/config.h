@@ -74,12 +74,12 @@
 #define NL_DAWN_ZENITH_COL   vec3(0.35,0.27,0.58)
 #define NL_DAWN_HORIZON_COL  vec3(5.35,1.15,0.27)
 #define NL_DAWN_EDGE_COL     vec3(5.90,1.25,0.35)
-#define NL_DAY_ZENITH_COL    vec3(0.30,0.90,2.10)
+#define NL_DAY_ZENITH_COL    vec3(0.32,0.97,2.12)
 #define NL_DAY_HORIZON_COL   vec3(1.10,1.88,2.05)
 #define NL_DAY_EDGE_COL      vec3(1.45,2.08,2.20)
-#define NL_NIGHT_ZENITH_COL  vec3(0.045,0.050,0.14)
-#define NL_NIGHT_EDGE_COL    vec3(0.23,0.22,0.44)
-#define NL_NIGHT_HORIZON_COL vec3(0.25,0.24,0.48)
+#define NL_NIGHT_ZENITH_COL  vec3(0.010, 0.004, 0.155)
+#define NL_NIGHT_HORIZON_COL vec3(0.022, 0.006, 0.185)
+#define NL_NIGHT_EDGE_COL    vec3(0.045, 0.010, 0.235)
 #define NL_RAIN_ZENITH_COL   vec3(0.27,0.20,0.91)
 #define NL_RAIN_HORIZON_COL  vec3(0.34,0.32,0.84)
 
@@ -144,6 +144,7 @@
 #define NL_CLOUD2_SHAPE vec2(0.6, 0.8)     // 0.0 round ~ 1.0 box vec2(horizontal shape, vertical shape)
 #define NL_CLOUD2_DENSITY 200.0             // 0.35 blurry ~ 100.0 sharp
 #define NL_CLOUD2_VELOCITY 0.55             // 0.0 static ~ 4.0 very fast
+#define NL_CLOUD2_BRIGHTNESS 1.4            // 0.0 dark ~ 2.0 very bright
 //#define NL_CLOUD2_LAYER2                      // [toggle] extra cloud layer
 #define NL_CLOUD2_LAYER2_OFFSET 65.0           // 30.0 near ~ 300.0 very high
 #define NL_CLOUD2_LAYER2_THICKNESS 4.8          // 0.7 slim ~ 5.0 fat
@@ -176,9 +177,9 @@
 #define NL_SHOOTING_STAR_DELAY 60.0 // 0.0 no delay ~ 100.0 long time (100 secs)
 
 /* Galaxy */
-#define NL_GALAXY_STARS 2.0           // [toggle] 0.1 dim - 4.0 bright
+#define NL_GALAXY_STARS 1.1           // [toggle] 0.1 dim - 4.0 bright
 #define NL_GALAXY_VIBRANCE 0.7          // 0.0 white - 1.0 colorful
-#define NL_GALAXY_SPEED 0.03            // 0.01 slow motion - 0.2 fast motion
+#define NL_GALAXY_SPEED 0.01            // 0.01 slow motion - 0.2 fast motion
 #define NL_GALAXY_DAY_VISIBILITY 0.0    // 0.0 invisible - 1.0 visible
 
 // amg's end sky thing is in sky.h so this is commented out

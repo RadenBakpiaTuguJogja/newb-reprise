@@ -276,7 +276,7 @@ vec3 nlRenderGalaxy(vec3 vdir, vec3 fogColor, nl_environment env, float t) {
   st = (1.0 - st) / (1.0 + 100.0 * st);
   vec3 stars = vec3(0.2, 0.1, 1.0) * st; // <Stars color over here
 
-  stars *= mix(0.0, NL_GALAXY_DAY_VISIBILITY, env.dayFactor);
+  stars *= mix(1.0, NL_GALAXY_DAY_VISIBILITY, env.dayFactor);
 
   return stars*(1.0-env.rainFactor);
 }
