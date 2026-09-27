@@ -260,7 +260,6 @@
 #ifdef MEDIUM_BOX_CLOUDS
   #undef  NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 0
-  #define NL_CLOUD0_MULTILAYER
 #endif
 
 #ifdef MEDIUM_REALISTIC_CLOUDS
@@ -283,9 +282,6 @@
   #define NL_CLOUD_TYPE 2
   #undef  NL_CLOUD2_STEPS
   #define NL_CLOUD2_STEPS 16
-  #define NL_CLOUD2_LAYER2
-  #undef  NL_CLOUD2_LAYER2_STEPS
-  #define NL_CLOUD2_LAYER2_STEPS 16
   #define NL_GLOW_LEAK 1.0
   #define NL_GLOW_SHIMMER 1.0
   #define NL_PLANTS_WAVE 0.04
