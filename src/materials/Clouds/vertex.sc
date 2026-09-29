@@ -51,11 +51,10 @@ void main() {
       worldPos = mul(model, vec4(pos, 1.0)).xyz;
 
       float cloudGradient = smoothstep(0.0, 1.0, a_position.y);
-      color.rgb = mix(skycol.horizonEdge, skycol.zenith, cloudGradient);
-      color.rgb += dot(color.rgb, vec3(0.4,0.5,0.4))*a_position.y;
+      color.rgb = skycol.horizonEdge;
       color.rgb *= 1.0 - 0.5*rain;
       color.rgb = colorCorrection(color.rgb);
-      color.a = NL_CLOUD0_OPACITY * fog_fade(worldPos.xyz);
+      color.a = NL_CLOUD0_OPACITY * (1.0 - cloudGradient) * fog_fade(worldPos.xyz);
 
       // clouds.png has two non-overlaping layers:
       // r=unused, g=layers, b=reference, a=unused
