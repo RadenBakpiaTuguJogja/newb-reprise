@@ -83,8 +83,8 @@
 #define NL_RAIN_ZENITH_COL   vec3(0.27,0.20,0.91)
 #define NL_RAIN_HORIZON_COL  vec3(0.34,0.32,0.84)
 
-#define NL_END_ZENITH_COL    vec3(0.45,0.55,1.0)*2.5
-#define NL_END_HORIZON_COL   vec3(0.5,0.6,1.10)*2.8
+#define NL_END_ZENITH_COL    vec3(1.45,0.55,2.5)*2.5
+#define NL_END_HORIZON_COL   vec3(1.5,0.6,2.40)*2.8
 
 
 /* Rainbow */
@@ -125,7 +125,7 @@
 
 /* Vanilla cloud settings - make sure to remove clouds.png when using this */
 #define NL_CLOUD0_THICKNESS 4.7      // 0.5 slim ~ 8.0 fat
-#define NL_CLOUD0_RAIN_THICKNESS 5.2 // 0.5 slim ~ 8.0 fat
+#define NL_CLOUD0_RAIN_THICKNESS 6.2 // 0.5 slim ~ 8.0 fat
 #define NL_CLOUD0_OPACITY 1.0        // 0.0 invisible ~ 1.0 opaque
 //#define NL_CLOUD0_MULTILAYER         // [toggle] extra cloud layer
 
@@ -247,6 +247,7 @@
   #undef NL_RAIN_MIST_OPACITY
   #undef NL_CLOUDY_FOG
   #undef NL_ENTITY_EDGE_HIGHLIGHT
+  #undef NL_GALAXY_STARS
    #define NL_CLOUD0_MULTILAYER
 #endif
 
@@ -255,14 +256,32 @@
 #ifdef MEDIUM_ROUNDED_CLOUDS
   #undef  NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 2
+  #undef NL_GALAXY_STARS
 #endif
 
 #ifdef MEDIUM_BOX_CLOUDS
   #undef  NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 0
+  #undef NL_GALAXY_STARS
 #endif
 
 #ifdef MEDIUM_REALISTIC_CLOUDS
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 3
+  #undef NL_GALAXY_STARS
+#endif
+
+#ifdef MEDIUM_ROUNDED_CLOUDS_GALAXY
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 2
+#endif
+
+#ifdef MEDIUM_BOX_CLOUDS_GALAXY
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 0
+#endif
+
+#ifdef MEDIUM_REALISTIC_CLOUDS_GALAXY
   #undef  NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 3
 #endif
@@ -274,6 +293,7 @@
   #define NL_GLOW_LEAK 1.0
   #define NL_GLOW_SHIMMER 1.0
   #define NL_PLANTS_WAVE 0.04
+  #undef NL_GALAXY_STARS
 #endif
 
 
@@ -285,10 +305,41 @@
   #define NL_GLOW_LEAK 1.0
   #define NL_GLOW_SHIMMER 1.0
   #define NL_PLANTS_WAVE 0.04
+  #undef NL_GALAXY_STARS
 
 #endif
 
 #ifdef HIGH_REALISTIC_CLOUDS
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 3
+  #define NL_GLOW_LEAK 1.0
+  #define NL_GLOW_SHIMMER 1.0
+  #define NL_PLANTS_WAVE 0.04
+  #undef NL_GALAXY_STARS
+#endif
+
+#ifdef HIGH_BOX_CLOUDS_GALAXY
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 0
+  #define NL_CLOUD0_MULTILAYER
+  #define NL_GLOW_LEAK 1.0
+  #define NL_GLOW_SHIMMER 1.0
+  #define NL_PLANTS_WAVE 0.04
+#endif
+
+
+#ifdef HIGH_ROUNDED_CLOUDS_GALAXY
+  #undef  NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 2
+  #undef  NL_CLOUD2_STEPS
+  #define NL_CLOUD2_STEPS 16
+  #define NL_GLOW_LEAK 1.0
+  #define NL_GLOW_SHIMMER 1.0
+  #define NL_PLANTS_WAVE 0.04
+
+#endif
+
+#ifdef HIGH_REALISTIC_CLOUDS_GALAXY
   #undef  NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 3
   #define NL_GLOW_LEAK 1.0
