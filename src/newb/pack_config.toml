@@ -1,15 +1,15 @@
 name = "§o§l§aNewb Reprise"
-version = [3, 3, 3]
-min_supported_mc_version = [1, 26, 50]
+version = [3, 3, 4]
+min_supported_mc_version = [1, 26, 60]
 description = '''
 §c%w
 §7- §fAdding clarity to MCBE graphics.
 %v
-§https://github.com/RadenBakpiaTuguJogja/newb-reprise
+§hhttps://github.com/RadenBakpiaTuguJogja/newb-reprise
 ''' # %w = patch warning, %v = version
 authors = ["raden1/ardrafflesia", "devendrn"]
 url = "https://github.com/RadenBakpiaTuguJogja/newb-reprise"
-uuid = "3d417b25-6cf8-4aea-bc82-d848fffb2102" # Use https://www.uuidgenerator.net/version4
+uuid = "d4974191-b107-4a8a-ab52-30fd767e7dbc" # Use https://www.uuidgenerator.net/version4
 materials = ["Actor", "ActorGlint", "ActorMultiTexture", "Clouds", "EndSky", "ItemInHandColor", "ItemInHandColorGlint", "ItemInHandTextured", "RenderChunk","Sky", "Stars", "SunMoon", "Weather"]
 
 [info] 

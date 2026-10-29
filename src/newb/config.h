@@ -28,9 +28,23 @@
 */
 
 /* Color correction */
-#define NL_TONEMAP_TYPE 3              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
-#define NL_GAMMA 1.33                  // 0.3 low ~ 2.0 high
-//#define NL_EXPOSURE 1.3              // [toggle] 0.5 dark ~ 3.0 bright
+#define NL_TONEMAP_TYPE 6              // 1: exponential
+                                       // 2: reinhard
+                                       // 3: extended Reinhard
+                                       // 4: ACES
+                                       // ------------------------
+                                       // 5: aces Hill
+                                       // 6: flimic
+                                       // 7: hejl
+                                       // 8: lottes
+                                       // 9: neutral
+                                       // 10: reinhard Jodie
+                                       // 11: uchimura
+                                       // 12: uncharted2
+                                       // 13: unreal
+
+#define NL_GAMMA 1.31                  // 0.3 low ~ 2.0 high
+#define NL_EXPOSURE 0.69              // [toggle] 0.5 dark ~ 3.0 bright
 //#define NL_SATURATION 1.0             // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
 #define NL_TINT_LOW  vec3(0.3,0.5,1.4) // color tint for dark tone
@@ -38,7 +52,7 @@
 
 /* Lighting */
 #define NL_SUNLIGHT_INTENSITY   3.3  // 1.0 weak ~ 5.0 bright
-#define NL_TORCHLIGHT_INTENSITY 1.05  // 0.5 weak ~ 3.0 bright
+#define NL_TORCHLIGHT_INTENSITY 0.8  // 0.5 weak ~ 3.0 bright
 #define NL_SHADOW_INTENSITY     0.84  // 0.0 no shadow ~ 1.0 strong shadow
 #define NL_MIN_LIGHTING_BOOST   1.0  // 1.0 minimal lighting boost for dark areas ~ 3.0 brighter dark areas
 //#define NL_BLINKING_TORCH  // [toggle] flickering light
@@ -54,10 +68,10 @@
 #define NL_NIGHT_MOONLIGHT_COL vec3(0.015,0.03,0.15)
 
 /* Torch colors */
-#define NL_OVERWORLD_TORCH_COL  vec3(1.1,0.52,0.18)
+#define NL_OVERWORLD_TORCH_COL  vec3(1.10, 0.98, 0.70)
 #define NL_UNDERWATER_TORCH_COL vec3(0.6,0.4,0.9)
-#define NL_NETHER_TORCH_COL     vec3(1.0,0.52,0.18)
-#define NL_END_TORCH_COL        vec3(1.0,0.48,0.18)
+#define NL_NETHER_TORCH_COL     vec3(1.10, 0.98, 0.70)
+#define NL_END_TORCH_COL        vec3(1.10, 0.98, 0.70)
 
 /* Fog */
 #define NL_FOG 1.0                // [toggle] 0.1 subtle ~ 1.0 blend with sky completely
@@ -71,9 +85,9 @@
 #define NL_SKY_RAIN_MIX_FACTOR 0.7
 
 /* Sky colors - zenith=top, horizon=bottom */
-#define NL_DAWN_ZENITH_COL   vec3(0.35,0.27,0.58)
-#define NL_DAWN_HORIZON_COL  vec3(5.35,1.15,0.27)
-#define NL_DAWN_EDGE_COL     vec3(5.90,1.25,0.35)
+#define NL_DAWN_ZENITH_COL   vec3(0.32,0.97,2.12)
+#define NL_DAWN_HORIZON_COL  vec3(4.15,1.50,0.65)*1.5
+#define NL_DAWN_EDGE_COL     vec3(1.82,1.52,1.16)
 #define NL_DAY_ZENITH_COL    vec3(0.32,0.97,2.12)
 #define NL_DAY_HORIZON_COL   vec3(1.10,1.88,2.05)
 #define NL_DAY_EDGE_COL      vec3(1.45,2.08,2.20)
